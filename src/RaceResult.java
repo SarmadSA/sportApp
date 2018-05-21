@@ -46,7 +46,7 @@ public class RaceResult {
     }
     
     /**
-     * Compares two restult, one of witch is the objects
+     * Compares two restults, one of witch is the objects
      * result with another result, and returns a value
      * indicating wether this objects result is less then,
      * greater then or equal to the parameter result.
