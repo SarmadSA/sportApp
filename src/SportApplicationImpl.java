@@ -1,4 +1,8 @@
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 /**
  * Represents the SportApplication. The class is a delegate for the main
  * application and the menu-system. Any functions triggered by a menu selection
@@ -11,6 +15,12 @@
 public class SportApplicationImpl implements SportApplication
 {
     
+    private ArrayList<Athlete> athletes; 
+            
+    public SportApplicationImpl(){
+        this.athletes = new ArrayList<>();
+    }
+            
     @Override
     public void init()
     {
@@ -20,7 +30,23 @@ public class SportApplicationImpl implements SportApplication
     @Override
     public void registerAthlete()
     {
-        System.out.println("registerAthlete() was called..");    
+        System.out.println("registerAthlete() was called..");
+        Scanner reader = new Scanner(System.in);
+        
+        System.out.println("Enter athlete name:");
+        String name = reader.nextLine();
+        
+        System.out.println("Enter athlete age:");
+        int age = reader.nextInt();
+        
+        System.out.println("Enter athlete startnumber:");
+        float startnumber = reader.nextFloat();
+        
+        System.out.println("Enter athlete personalBest:");
+        float personalBest = reader.nextFloat();
+        
+        this.athletes.add(new Athlete(name, age, startnumber, personalBest));
+        System.out.println("Athlete: " + name + " Has been registerd!");
     }
 
     @Override
@@ -32,7 +58,8 @@ public class SportApplicationImpl implements SportApplication
     @Override
     public void listCompetitors()
     {
-        System.out.println("listCompetitors() was called..");    
+        System.out.println("listCompetitors() was called..");
+        
     }
     
     @Override
