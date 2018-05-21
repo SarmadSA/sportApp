@@ -49,7 +49,7 @@ public class AthleteRegister {
      * @return found athlete with the spesified name, null if no athlete with such a name found
      */
     public Athlete findByName(String name){
-        Iterator<Athlete> it = Athlete.iterator();
+        Iterator<Athlete> it = athleteList.iterator();
         Athlete foundAthlete = null;
         boolean athleteFound = false;
         
