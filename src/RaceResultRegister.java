@@ -4,6 +4,7 @@
  * such as add, remove, find by name etc..
  * 
  * @author Sarmad
+ * @version 21.05.2018
  */
 public class RaceResultRegister {
     

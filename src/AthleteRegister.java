@@ -5,7 +5,8 @@ import java.util.Iterator;
 /**
  * Represents a register that stores all
  * athletes in a list, and provides some functionality
- * such as adding, removeing etc athletes form the register.
+ * such as adding, removeing athletes form the register
+ * and finding athlete by name in the register.
  * 
  * @author Sarmad
  * @version 01.06.2018
