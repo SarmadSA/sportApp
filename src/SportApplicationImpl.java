@@ -41,12 +41,12 @@ public class SportApplicationImpl implements SportApplication
         int age = reader.nextInt();
         
         System.out.println("Enter athlete startnumber:");
-        float startnumber = reader.nextFloat();
+        int startnumber = reader.nextInt();
         
         System.out.println("Enter athlete personalBest:");
-        float personalBest = reader.nextFloat();
+        double personalBest = reader.nextDouble();
         
-        this.athleteRegister.add(new Athlete(name, age, startnumber, personalBest));
+        athleteRegister.add(new Athlete(name, age, startnumber, personalBest));
         System.out.println("Athlete: " + name + " Has been registerd!");
     }
 
@@ -84,6 +84,9 @@ public class SportApplicationImpl implements SportApplication
      */
     private void fillRegistersWithDataForTesting()
     {
-        
+        athleteRegister.add(new Athlete("Usain Bolt", 39, 1, 9.58));
+        athleteRegister.add(new Athlete("Florence GriffithJoyner", 39, 2, 10.49));
+        raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
+        raceResultRegister.add(new RaceResult(new Athlete("Florence GriffithJoyner", 39, 2, 10.49), 10.49));
     }        
 }
