@@ -6,8 +6,8 @@
 public class Athlete {
    private String name;
    private int age;
-   private float startnumber;
-   private float personalBest;
+   private int startnumber;
+   private double personalBest;
    
    /**
     * Constructor of class athlete.
@@ -17,7 +17,7 @@ public class Athlete {
     * @param startnumber - startnumber of athlete
     * @param personalBest - personalBest of athlete
     */
-    public Athlete(String name, int age, float startnumber, float personalBest) {
+    public Athlete(String name, int age, int startnumber, double personalBest) {
         this.name = name;
         this.age = age;
         this.startnumber = startnumber;
@@ -47,7 +47,7 @@ public class Athlete {
      * 
      * @return startnumber - startnumber to return
      */
-    public float getStartnumber() {
+    public int getStartnumber() {
         return startnumber;
     }
     
@@ -56,7 +56,7 @@ public class Athlete {
      * 
      * @return personalBest - personalBest to return
      */
-    public float getPersonalBest() {
+    public double getPersonalBest() {
         return personalBest;
     }
     
