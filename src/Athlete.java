@@ -4,9 +4,9 @@
  * @author Sarmad Saeed
  */
 public class Athlete {
-   private String name;
-   private int age;
-   private int startnumber;
+   private final String name;
+   private final int age;
+   private final int startnumber;
    private double personalBest;
    
    /**
