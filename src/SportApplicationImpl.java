@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -14,11 +14,12 @@ import java.util.Scanner;
  */
 public class SportApplicationImpl implements SportApplication
 {
+    private AthleteRegister athleteRegister;
+    private RaceResultRegister raceResultRegister;
     
-    private ArrayList<Athlete> athletes; 
-            
     public SportApplicationImpl(){
-        this.athletes = new ArrayList<>();
+        this.athleteRegister = new AthleteRegister();
+        this.raceResultRegister = new RaceResultRegister();
     }
             
     @Override
@@ -45,7 +46,7 @@ public class SportApplicationImpl implements SportApplication
         System.out.println("Enter athlete personalBest:");
         float personalBest = reader.nextFloat();
         
-        this.athletes.add(new Athlete(name, age, startnumber, personalBest));
+        this.athleteRegister.add(new Athlete(name, age, startnumber, personalBest));
         System.out.println("Athlete: " + name + " Has been registerd!");
     }
 
@@ -59,6 +60,15 @@ public class SportApplicationImpl implements SportApplication
     public void listCompetitors()
     {
         System.out.println("listCompetitors() was called..");
+        Iterator<Athlete> it = this.athleteRegister.getAthleteIterator();
+        while(it.hasNext()){
+            Athlete athlete = it.next();
+            System.out.println();
+            System.out.println("Name: " + athlete.getName());
+            System.out.println("Age: " + athlete.getAge());
+            System.out.println("StartNumber: " + athlete.getStartnumber());
+            System.out.println("PersonalBest: " + athlete.getPersonalBest());
+        }
         
     }
     
@@ -74,6 +84,6 @@ public class SportApplicationImpl implements SportApplication
      */
     private void fillRegistersWithDataForTesting()
     {
-        //TODO: Fill in code that creates some athletes and some results
+        
     }        
 }
