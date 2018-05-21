@@ -4,8 +4,8 @@
  * @author Sarmad Saeed
  */
 public class RaceResult {
-    private Athlete athlete;
-    private float result;
+    private final Athlete athlete;
+    private double result;
     
     /**
      * Constructor of class result
@@ -13,7 +13,7 @@ public class RaceResult {
      * @param athlete - athlete
      * @param result - result of the given athlete
      */
-    public RaceResult(Athlete athlete, float result) {
+    public RaceResult(Athlete athlete, double result) {
         this.athlete = athlete;
         this.result = result;
     }
@@ -32,7 +32,7 @@ public class RaceResult {
      * 
      * @return result - result to return
      */ 
-    public float getResult() {
+    public double getResult() {
         return result;
     }
     
@@ -41,7 +41,7 @@ public class RaceResult {
      * 
      * @param result - new result
      */
-    public void setResult(float result) {
+    public void setResult(double result) {
         this.result = result;
     }
     
