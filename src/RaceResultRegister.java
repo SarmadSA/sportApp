@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -32,5 +33,9 @@ public class RaceResultRegister {
     
     public Iterator<RaceResult> getRaceResultIterator(){
         return this.resultList.iterator();
+    }
+    
+    public void sortResults(){
+        Collections.sort(resultList);
     }
 }

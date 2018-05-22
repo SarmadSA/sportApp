@@ -75,7 +75,15 @@ public class SportApplicationImpl implements SportApplication
     @Override
     public void showResult()
     {
-        System.out.println("showResult() was called..");    
+        System.out.println("showResult() was called..");
+        raceResultRegister.sortResults();
+        Iterator<RaceResult> it = this.raceResultRegister.getRaceResultIterator();
+        while(it.hasNext()){
+            RaceResult raceResult = it.next();
+            System.out.println();
+            System.out.println("Athlete: " + raceResult.getAthlete().getName());
+            System.out.println("Time: " + raceResult.getResult());
+        }
     }
     
     /**
@@ -86,7 +94,8 @@ public class SportApplicationImpl implements SportApplication
     {
         athleteRegister.add(new Athlete("Usain Bolt", 39, 1, 9.58));
         athleteRegister.add(new Athlete("Florence GriffithJoyner", 39, 2, 10.49));
-        raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
         raceResultRegister.add(new RaceResult(new Athlete("Florence GriffithJoyner", 39, 2, 10.49), 10.49));
+         raceResultRegister.add(new RaceResult(new Athlete("sarmad test", 39, 1, 8.0), 8.0));
+        raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
     }        
 }

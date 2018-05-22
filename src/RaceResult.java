@@ -3,7 +3,7 @@
  * 
  * @author Sarmad Saeed
  */
-public class RaceResult {
+public class RaceResult implements Comparable<RaceResult> {
     private final Athlete athlete;
     private double result;
     
@@ -54,6 +54,7 @@ public class RaceResult {
      * @param raceResult
      * @return returnValue - indication-value to return.
      */
+    @Override
     public int compareTo(RaceResult raceResult){
         int returnValue = 0;
         if(result < raceResult.getResult()){
