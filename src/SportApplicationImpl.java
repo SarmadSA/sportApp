@@ -53,7 +53,18 @@ public class SportApplicationImpl implements SportApplication
     @Override
     public void registerResult()
     {
-        System.out.println("registerResult() was called..");    
+        System.out.println("registerResult() was called..");
+        
+        Scanner reader = new Scanner(System.in);
+        
+        System.out.println("Enter athlete name:");
+        String athleteName = reader.nextLine();
+        Athlete athlete = athleteRegister.findByName(athleteName);
+        
+        System.out.println("Enter athlete time:");
+        double time = reader.nextDouble();
+        
+        raceResultRegister.add(new RaceResult(athlete, time));
     }
     
     @Override
@@ -95,7 +106,7 @@ public class SportApplicationImpl implements SportApplication
         athleteRegister.add(new Athlete("Usain Bolt", 39, 1, 9.58));
         athleteRegister.add(new Athlete("Florence GriffithJoyner", 39, 2, 10.49));
         raceResultRegister.add(new RaceResult(new Athlete("Florence GriffithJoyner", 39, 2, 10.49), 10.49));
-         raceResultRegister.add(new RaceResult(new Athlete("sarmad test", 39, 1, 8.0), 8.0));
+        raceResultRegister.add(new RaceResult(new Athlete("sarmad test", 39, 1, 8.0), 8.0));
         raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
     }        
 }
