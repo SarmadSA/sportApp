@@ -54,17 +54,29 @@ public class SportApplicationImpl implements SportApplication
     public void registerResult()
     {
         System.out.println("registerResult() was called..");
-        
         Scanner reader = new Scanner(System.in);
         
         System.out.println("Enter athlete name:");
         String athleteName = reader.nextLine();
         Athlete athlete = athleteRegister.findByName(athleteName);
         
-        System.out.println("Enter athlete time:");
-        double time = reader.nextDouble();
-        
-        raceResultRegister.add(new RaceResult(athlete, time));
+        if(athlete == null){
+            System.out.println("No registered athlete with the given name was found!");
+            System.out.println("Therfore can not add race result. Please choose the same");
+            System.out.println("option again to try again");
+        }
+        else{
+            try{
+                System.out.println("Enter athlete time:");
+                double time = reader.nextDouble();
+
+                raceResultRegister.add(new RaceResult(athlete, time));
+                System.out.println("Race result for athlete: " + athleteName + " was registerd!");
+            }
+            catch(Exception e){
+                System.out.println("Time sould be a number or desimal number, please choose the same option again and try again");
+            }
+        }
     }
     
     @Override
