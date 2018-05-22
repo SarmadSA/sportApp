@@ -45,9 +45,13 @@ public class SportApplicationImpl implements SportApplication
         
         System.out.println("Enter athlete personalBest:");
         double personalBest = reader.nextDouble();
-        
-        athleteRegister.add(new Athlete(name, age, startnumber, personalBest));
-        System.out.println("Athlete: " + name + " Has been registerd!");
+        try{
+            athleteRegister.add(new Athlete(name, age, startnumber, personalBest));
+            System.out.println("Athlete: " + name + " Has been registerd!");
+        }
+        catch(NegativeNumberException e){
+            System.out.println("Age and/or personal best can not be negative!");
+        }
     }
 
     @Override
@@ -115,10 +119,15 @@ public class SportApplicationImpl implements SportApplication
      */
     private void fillRegistersWithDataForTesting()
     {
-        athleteRegister.add(new Athlete("Usain Bolt", 39, 1, 9.58));
-        athleteRegister.add(new Athlete("Florence GriffithJoyner", 39, 2, 10.49));
-        raceResultRegister.add(new RaceResult(new Athlete("Florence GriffithJoyner", 39, 2, 10.49), 10.49));
-        raceResultRegister.add(new RaceResult(new Athlete("sarmad test", 39, 1, 8.0), 8.0));
-        raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
+        try{
+            athleteRegister.add(new Athlete("Usain Bolt", 39, 1, 9.58));
+            athleteRegister.add(new Athlete("Florence GriffithJoyner", 39, 2, 10.49));
+            raceResultRegister.add(new RaceResult(new Athlete("Florence GriffithJoyner", 39, 2, 10.49), 10.49));
+            raceResultRegister.add(new RaceResult(new Athlete("sarmad test", 39, 1, 8.0), 8.0));
+            raceResultRegister.add(new RaceResult(new Athlete("Usain Bolt", 39, 1, 9.58), 9.58));
+        }
+        catch(NegativeNumberException e){
+            System.out.println("Age and/or personal best can not be negative!");
+        }
     }        
 }

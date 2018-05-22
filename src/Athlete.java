@@ -16,12 +16,18 @@ public class Athlete {
     * @param age - age of athlete 
     * @param startnumber - startnumber of athlete
     * @param personalBest - personalBest of athlete
+    * @throws NegativeNumberException
     */
-    public Athlete(String name, int age, int startnumber, double personalBest) {
-        this.name = name;
-        this.age = age;
-        this.startnumber = startnumber;
-        this.personalBest = personalBest;
+    public Athlete(String name, int age, int startnumber, double personalBest) throws NegativeNumberException{
+        if(age < 0 || personalBest < 0){
+            throw new NegativeNumberException();
+        }
+        else{
+            this.name = name;
+            this.age = age;
+            this.startnumber = startnumber;
+            this.personalBest = personalBest;   
+        }
     }
     
     /**
